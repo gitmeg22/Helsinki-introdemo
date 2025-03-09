@@ -1,11 +1,26 @@
-const App = (props) => {
-  console.log(props)
+import { useState } from 'react'
 
-  const {counter} = props
-  console.log(props)
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  // const handleClick = () => {
+  //   console.log('clicked')
+  //   setCounter(counter + 1);
+  // }
+
+  // setTimeout(
+  //   () => setCounter(counter + 1),
+  //   1000
+  // )
 
   return (
-    <div>{counter}</div>
+    <>
+      <div>{counter}</div>
+      <button onClick={() => {console.log('clicked'); setCounter(counter + 1)}}>
+        {/* plus */}
+        {counter}
+      </button>
+    </>
   )
 }
 
