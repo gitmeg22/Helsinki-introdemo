@@ -3,22 +3,18 @@ import { useState } from 'react'
 const App = () => {
   const [ counter, setCounter ] = useState(0)
 
-  // const handleClick = () => {
-  //   console.log('clicked')
-  //   setCounter(counter + 1);
-  // }
+  const increaseByOne = () => setCounter(counter + 1)
 
-  // setTimeout(
-  //   () => setCounter(counter + 1),
-  //   1000
-  // )
+  const setToZero = () => setCounter(0)
 
   return (
     <>
       <div>{counter}</div>
-      <button onClick={() => {console.log('clicked'); setCounter(counter + 1)}}>
-        {/* plus */}
-        {counter}
+      <button onClick={increaseByOne}>
+        plus
+      </button>
+      <button onClick={setToZero}>
+        zero
       </button>
     </>
   )
