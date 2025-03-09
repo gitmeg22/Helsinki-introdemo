@@ -3,18 +3,17 @@ import { useState } from 'react'
 const App = () => {
   const [value, setValue] = useState(10)
 
-  const hello = (who) => 
-    () => {
-      console.log('hello', who)
-    
+  const setToValue = (newValue) => () => {
+      console.log('value now', newValue)
+      setValue(newValue)
   }
 
   return (
     <>
       {value}
-      <Button onClick={hello('world')}  text='world' />
-      <Button onClick={hello('react')}  text='react' />
-      <Button onClick={hello('function')} text='function' />
+      <Button onClick={setToValue(1000)}  text='1000' />
+      <Button onClick={setToValue(0)}  text='reset' />
+      <Button onClick={setToValue(value + 1)}  text='increment' />
     </>
   )
 }
